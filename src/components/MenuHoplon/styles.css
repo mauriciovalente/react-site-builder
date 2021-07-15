@@ -1,0 +1,23 @@
+.MenuHoplon {
+ position: relative;
+ background: #031020;
+ padding: 10px 30px;
+ color: white;
+}
+
+.MenuHoplon nav {
+  text-align: left;
+}
+
+.MenuHoplon a {
+  display: inline-block;
+  padding: 2px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+.MenuHoplon a:hover {
+  text-decoration: underline;
+}

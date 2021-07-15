@@ -1,0 +1,18 @@
+.latest-news {
+  padding: 20px;
+  background-color: #032747;
+  color: white;
+}
+
+.latest-news-cards {
+  margin: auto;
+  width: 50vw;
+}
+
+.news-card {
+  height: 150px;
+  width: 200px;
+  display: inline-block;
+  border: 1px solid white;
+  margin: 10px;
+}

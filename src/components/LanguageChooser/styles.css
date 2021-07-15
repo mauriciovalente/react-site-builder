@@ -1,0 +1,41 @@
+.language-chooser {
+  text-transform: uppercase;
+  display:inline;
+  float:right;
+}
+
+.language-chooser img {
+  width: 16px;
+  height: 16px;
+  margin-right: 2px;
+  margin-top: 5px;
+}
+
+.language-chooser ul {
+  display: none;
+  position: absolute;
+  background-color: gray;
+}
+
+.language-chooser.open ul {
+  display: block;
+  text-align: left;
+}
+
+.language-chooser li {
+  position: relative;
+  padding-top: 5px;
+  cursor: pointer;
+  display:block !important;
+  padding-left: 1px !important;
+}
+
+.language-chooser span {
+  cursor: pointer;
+}
+
+.language-chooser span::after {
+  content: ">";
+  margin-left: 2px;
+  transform: rotate(90deg);
+}

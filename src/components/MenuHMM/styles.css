@@ -1,0 +1,26 @@
+.MenuHMM {
+ position: relative;
+ background: #000;
+ padding: 10px 30px;
+ color: white;
+ text-align: left;
+ vertical-align: center;
+}
+
+.MenuHMM nav.items-menu {
+  text-align: left;
+  display: inline;
+}
+
+.MenuHMM a {
+  display: inline-block;
+  padding: 2px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+.MenuHMM a:hover {
+  text-decoration: underline;
+}

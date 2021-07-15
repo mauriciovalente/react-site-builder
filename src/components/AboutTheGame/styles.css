@@ -1,0 +1,10 @@
+.about-game {
+  padding: 20px;
+  background-color: #032747;
+  color: white;
+}
+
+.about-game-cards {
+  margin: auto;
+  width: 50vw;
+}
