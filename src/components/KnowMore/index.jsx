@@ -1,5 +1,5 @@
-import { InformYourEmail } from '../InformYourEmail';
-import './style.css';
+import { InformYourEmail } from "../InformYourEmail";
+import "./style.css";
 
 export const KnowMore = () => {
   return (

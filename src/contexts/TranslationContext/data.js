@@ -1,4 +1,4 @@
 export const data = {
-  language: 'en',
+  language: "en-US",
   translations: [],
 };

@@ -1,48 +1,25 @@
-import './styles.css';
-import { ImageLink } from '../ImageLink';
+import "./styles.css";
+import { SpanLink } from "../SpanLink";
+import { data } from "./data";
+import { useTranslationContext } from "../../contexts/TranslationContext";
 
 export const SocialShare = () => {
-  const social = [
-    {
-      id: 0,
-      name: 'vk',
-      image: '../image.png',
-    },
-    {
-      id: 1,
-      name: 'facebook',
-      image: '../image.png',
-    },
-    {
-      id: 2,
-      name: 'twitter',
-      image: '../image.png',
-    },
-    {
-      id: 3,
-      name: 'youtube',
-      image: '../image.png',
-    },
-    {
-      id: 4,
-      name: 'discord',
-      image: '../image.png',
-    },
-    {
-      id: 5,
-      name: 'instagram',
-      image: '../image.png',
-    },
-    {
-      id: 6,
-      name: 'twitch',
-      image: '../image.png',
-    },
-  ];
+  const [state] = useTranslationContext();
+  const translations = state.translations;
+
+  const social = data;
   return (
     <div className="social-share">
       {social.map((s) => {
-        return <ImageLink key={s.id} url={s.image} title={s.name} />;
+        return (
+          <SpanLink
+            className={s.class}
+            key={s.id}
+            url={translations[s.url]}
+            title={translations[s.title]}
+            target="_blank"
+          />
+        );
       })}
     </div>
   );

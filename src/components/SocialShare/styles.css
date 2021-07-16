@@ -3,5 +3,42 @@
 }
 
 .social-share a {
-  margin: 5px
+  margin: 5px;
+}
+
+.social-share span {
+  width: 63px;
+  height: 63px;
+  text-indent: -9999px;
+  display: inline-block;
+  border-radius: 50px;
+  background: url("./icons_sprite_social_yellow.png");
+}
+
+.icon-vk span {
+  background-position: -25px -25px;
+}
+
+.icon-facebook span {
+  background-position: -138px -25px;
+}
+
+.icon-twitter span {
+  background-position: -251px -25px;
+}
+
+.icon-youtube span {
+  background-position: -25px -138px;
+}
+
+.icon-discord span {
+  background-position: -25px -251px;
+}
+
+.icon-instagram span {
+  background-position: -251px -138px;
+}
+
+.icon-twitch span {
+  background-position: -138px -138px;
 }

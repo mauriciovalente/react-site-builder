@@ -1,4 +1,4 @@
-import * as types from './action-types';
+import * as types from "./action-types";
 
 export const translationHomeReducer = (state, action) => {
   console.log(action.type);
@@ -16,7 +16,9 @@ export const translationHomeReducer = (state, action) => {
     case types.TRANSLATION_ERROR: {
       return { ...state, loading: false };
     }
+    default: {
+      console.log("Action type not found" + action.type);
+      return { ...state };
+    }
   }
-  console.log('Action type not found' + action.type);
-  return { ...state };
 };

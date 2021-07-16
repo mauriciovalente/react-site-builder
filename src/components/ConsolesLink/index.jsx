@@ -1,25 +1,9 @@
-import './styles.css';
-import { ConsoleLink } from '../ConsoleLink';
+import "./styles.css";
+import { ConsoleLink } from "../ConsoleLink";
+import { data } from "./data.js";
 
 export const ConsolesLink = () => {
-  const games = [
-    {
-      id: '0',
-      name: 'ps4',
-      image: 'ps4',
-    },
-    {
-      id: '1',
-      name: 'Steam',
-      image: 'steam',
-    },
-    {
-      id: '2',
-      name: 'XboxOne',
-      image: 'xboxOne',
-    },
-  ];
-
+  const games = data;
   return (
     <div className="links-console">
       {games.map((c) => {
