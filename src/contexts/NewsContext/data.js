@@ -1,4 +1,4 @@
 export const data = {
-  language: "en-US",
+  language: "",
   news: [],
 };

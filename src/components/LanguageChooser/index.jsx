@@ -2,13 +2,10 @@ import "./styles.css";
 import globe from "../../globe-white.png";
 import { useTranslationContext } from "../../contexts/TranslationContext";
 import { useEffect, useState } from "react";
-import { useNewsContext } from "../../contexts/NewsContext";
 
 export const LanguageChooser = () => {
   const [state, actions] = useTranslationContext();
-  const [currentLanguage, setCurrentLanguage] = useState("Português");
-
-  const [news] = useNewsContext();
+  const [currentLanguage, setCurrentLanguage] = useState("English");
 
   const defaultLanguage = state.language;
 
@@ -27,13 +24,9 @@ export const LanguageChooser = () => {
 
   const handleChangeLanguage = (event) => {
     const language = event.currentTarget.getAttribute("value");
-    // console.log(
-    //   "Change language to ",
-    //   event.currentTarget.getAttribute("value")
-    // );
-    actions.loadHomeTranslations(language);
 
-    news.language = language;
+    actions.loadHomeTranslations(language);
+    state.language = language;
 
     setCurrentLanguage(event.currentTarget.innerText);
   };
@@ -41,7 +34,6 @@ export const LanguageChooser = () => {
   return (
     <div className="language-chooser" onClick={handleOpenMenu}>
       <img src={globe} alt="globe" />
-      {console.log(state)}
       <span> {currentLanguage} </span>
       <ul>
         <li onClick={handleChangeLanguage} value="pt-BR">

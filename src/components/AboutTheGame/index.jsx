@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useAboutTheGameContext } from "../../contexts/AboutTheGameContext";
 import { useTranslationContext } from "../../contexts/TranslationContext";
 import { AboutTheGameCard } from "../AboutTheGameCard";
-
 import "./styles.css";
 
 export const AboutTheGame = () => {
@@ -11,17 +10,15 @@ export const AboutTheGame = () => {
 
   const [about, aboutDispatch] = useAboutTheGameContext();
 
-  const defaultLanguage = state.language;
-
   const posts = about.about;
 
   useEffect(() => {
     aboutDispatch.loadAboutTheGame({
-      lang: defaultLanguage,
+      lang: state.language,
       offset: 0,
       limit: 2,
     });
-  }, [aboutDispatch, defaultLanguage]);
+  }, [aboutDispatch, state.language]);
 
   return (
     <div className="about-game">

@@ -1,6 +1,6 @@
+import { useEffect } from "react";
 import { useNewsContext } from "../../contexts/NewsContext";
 import { useTranslationContext } from "../../contexts/TranslationContext";
-import { useEffect } from "react";
 import "./styles.css";
 
 export const LatestNews = () => {
@@ -9,11 +9,10 @@ export const LatestNews = () => {
 
   const [stateNews, actions] = useNewsContext();
 
-  const defaultLanguage = stateNews.language;
-
   useEffect(() => {
-    actions.loadLatestNews({ lang: defaultLanguage, offset: 0, limit: 3 });
-  }, [actions, defaultLanguage]);
+    actions.loadLatestNews({ lang: state.language, offset: 0, limit: 3 });
+    console.log("retrieve news");
+  }, [actions, state.language]);
 
   return (
     <div className="latest-news">
