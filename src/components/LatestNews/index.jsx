@@ -1,29 +1,34 @@
-import { useTranslationContext } from '../../contexts/TranslationContext';
-import './styles.css';
+import { useNewsContext } from "../../contexts/NewsContext";
+import { useTranslationContext } from "../../contexts/TranslationContext";
+import { useEffect } from "react";
+import "./styles.css";
 
 export const LatestNews = () => {
   const [state] = useTranslationContext();
   const translations = state.translations;
 
-  const news = [
-    { id: 0, title: 'First news in from Hoplon HMM ...', image: 'image' },
-    { id: 1, title: 'Second news in from Hoplon HMM ...', image: 'image' },
-    { id: 2, title: 'Third news in from Hoplon HMM ...', image: 'image' },
-  ];
+  const [stateNews, actions] = useNewsContext();
+
+  const defaultLanguage = stateNews.language;
+
+  useEffect(() => {
+    actions.loadLatestNews({ lang: defaultLanguage, offset: 0, limit: 3 });
+  }, [actions, defaultLanguage]);
+
   return (
     <div className="latest-news">
-      <h1 className="lastest-title">{translations['latest news']}</h1>
+      <h1 className="lastest-title">{translations["latest news"]}</h1>
       <div className="latest-news-cards">
-        {news.map((n) => (
+        {stateNews.news.map((n) => (
           <div key={n.id} className="news-card">
-            <img src={n.image} alt={n.image} />
-            <p>{n.title}</p>
+            <img src={n.image} alt="" />
+            {n.title}
           </div>
         ))}
       </div>
       <div>
         <button type="button" className="action-button">
-          {translations['see more']}
+          {translations["see more"]}
         </button>
       </div>
     </div>

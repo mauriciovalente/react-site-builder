@@ -1,52 +1,21 @@
-import './styles.css';
+import "./styles.css";
+import { data } from "./data.js";
 
 export const InstitutionalLinks = () => {
-  const links = [
-    {
-      id: 0,
-      text: 'Fale Conosco',
-      url: 'fale-conosco',
-    },
-    {
-      id: 1,
-      text: 'Apoie um criador',
-      url: 'apoie-um-criador',
-    },
-    {
-      id: 2,
-      text: 'Código de Conduta',
-      url: 'codigo-de-conduta',
-    },
-    {
-      id: 3,
-      text: 'Suporte',
-      url: 'suporte',
-    },
-    {
-      id: 4,
-      text: 'Política de Privacidade',
-      url: 'politica-de-privacidade',
-    },
-    {
-      id: 5,
-      text: 'Eula',
-      url: 'eula',
-    },
-    {
-      id: 6,
-      text: 'Termos de Uso',
-      url: 'termos-de-uso',
-    },
-  ];
+  const links = data;
   return (
     <div className="institutional-links">
       {links.map((l) => {
         return (
           <div key={l.id}>
-            <a style={{ display: 'inline', padding: '10px' }} key={l.id} href={l.text}>
+            <a
+              style={{ display: "inline", padding: "10px" }}
+              key={l.id}
+              href={l.text}
+            >
               {l.text}
             </a>
-            <span style={{ padding: '10px' }}>.</span>
+            <span style={{ padding: "10px" }}>.</span>
           </div>
         );
       })}

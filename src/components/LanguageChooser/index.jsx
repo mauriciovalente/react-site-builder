@@ -2,10 +2,13 @@ import "./styles.css";
 import globe from "../../globe-white.png";
 import { useTranslationContext } from "../../contexts/TranslationContext";
 import { useEffect, useState } from "react";
+import { useNewsContext } from "../../contexts/NewsContext";
 
 export const LanguageChooser = () => {
   const [state, actions] = useTranslationContext();
   const [currentLanguage, setCurrentLanguage] = useState("Português");
+
+  const [news] = useNewsContext();
 
   const defaultLanguage = state.language;
 
@@ -24,11 +27,13 @@ export const LanguageChooser = () => {
 
   const handleChangeLanguage = (event) => {
     const language = event.currentTarget.getAttribute("value");
-    console.log(
-      "Change language to ",
-      event.currentTarget.getAttribute("value")
-    );
+    // console.log(
+    //   "Change language to ",
+    //   event.currentTarget.getAttribute("value")
+    // );
     actions.loadHomeTranslations(language);
+
+    news.language = language;
 
     setCurrentLanguage(event.currentTarget.innerText);
   };

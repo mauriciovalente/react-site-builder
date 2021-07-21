@@ -1,4 +1,5 @@
 import * as types from "./action-types";
+import * as ContextURLs from "../apis";
 
 export const actionFactory = (dispatch) => {
   return {
@@ -15,9 +16,7 @@ const loadTranslation = async (dispatch, payload, page) => {
     lang += "&lang=" + payload;
   }
 
-  // const url = 'https://www.heavymetalmachines.com/site/translations';
-  const url = "http://localhost/translation?page=" + page + lang;
-
+  const url = ContextURLs.URL_TRANSLATION + "page=" + page + lang;
   const translationsRaw = await fetch(url);
   const translations = await translationsRaw.json();
 
